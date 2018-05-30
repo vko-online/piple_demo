@@ -1,21 +1,23 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from 'react-navigation'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
+import Main from './src/Main'
+import Demo1 from './src/Demo1'
+import Demo2 from './src/Demo2'
+import Demo3 from './src/Demo3'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+export default createStackNavigator({
+  Main: {
+    screen: Main
   },
-});
+  Demo1: {
+    screen: Demo1
+  },
+  Demo2: {
+    screen: Demo2
+  },
+  Demo3: {
+    screen: Demo3
+  }
+}, {
+  initialRouteName: 'Main'
+})
